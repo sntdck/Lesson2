@@ -1,0 +1,6 @@
+trigger Company on Driver__c (before insert) {
+    
+        if(Trigger.isBefore){
+           update Companies.AddRequestToDriver(Trigger.New);        
+        }
+}

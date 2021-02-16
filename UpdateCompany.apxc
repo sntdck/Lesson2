@@ -1,0 +1,12 @@
+public class UpdateCompany {
+    
+    public static List<Company__c> setOrder(List<Company__c> company){
+        List<Company__c> order = new List<Company__c>();
+        for(Company__c orders: company){
+            orders.Order__c = Datetime.now();
+            order.add(orders);
+        }
+        return order;
+    }
+
+}

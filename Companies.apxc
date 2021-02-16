@@ -1,0 +1,15 @@
+public class Companies {
+    
+    public static List<Company__c> AddRequestToDriver(List<Driver__c> drivers)
+    {
+        Set<String> stringN = new Set<String>();
+        for(Driver__c driver: drivers){
+            stringN.add(driver.CompanyId__c);
+        }
+        
+        List<Company__c> company = [Select Id, Type_order__c From Company__c
+                                   Where Type_order__c In: stringN];
+        
+        return UpdateCompany.setOrder(company);
+    }
+}

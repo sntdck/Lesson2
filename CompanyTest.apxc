@@ -1,0 +1,19 @@
+@isTest
+private class CompanyTest {
+    
+    @isTest static void testTypeOrderPassenger(){
+        String Type_order = Companies.AddRequestToDriver('Passenger');
+            System.assertEquals('Passenger', Type_order);
+    }
+    
+     @isTest static void testTypeOrderFreight(){
+         String Type_order = Companies.AddRequestToDriver('Freight');
+         System.assertEquals('Freight', Type_order);
+    }
+    
+     @isTest static void testTypeOrderOther(){
+         String Type_order = Companies.AddRequestToDriver('Other');
+             System.assertEquals('Passenger', Type_order, 'Type order should include Freight or Passenger');
+    }
+
+}
